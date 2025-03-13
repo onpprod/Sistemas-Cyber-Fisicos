@@ -1,0 +1,98 @@
+{
+    "core": {
+        "requestHandlerThreadPoolSize": 2,
+        "serviceName": "ExampleAAS"
+    },
+    "endpoints": [
+        {
+			"@class": "de.fraunhofer.iosb.ilt.faaast.service.endpoint.opcua.OpcUaEndpoint",
+			"tcpPort": 8081
+		}
+    ],
+    "assetConnections": [
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Temperature":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Temperatura"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Temperatura"
+        },
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Humidity":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Umidade"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Umidade"
+        },
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Luminosity":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Luminosidade"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Luminosidade"
+        },
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)XAxis":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Eixo_X"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Eixo_X"
+        },
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)YAxis":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Eixo_Y"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Eixo_Y"
+        },
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)ZAxis":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/17/monitor/data",
+                                "query": "$.Eixo_Z"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_17_Eixo_Z"
+        }
+    ]
+}
