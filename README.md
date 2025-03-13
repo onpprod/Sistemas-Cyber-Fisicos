@@ -37,7 +37,7 @@ Esta etapa será descrita em outro documento.
      ```json
      "clientID": "FAAAST MQTT Client"
      ```
-## Etapa 4: Configurar a camada de integração
+## Etapa 3: Configurar a camada de integração
 Ajustar as variáveis de ambiente presentes no docker-compose.yml.
 
 ```
