@@ -36,7 +36,11 @@ async def main(BROKER, TOPIC):
         while True:
             if handler.connected:
                 temperature = round(random.uniform(20.0, 40.0), 1)  # Simulando uma temperatura entre 20 e 40°C
-                payload = json.dumps({"temperature": temperature})
+                luminosity = round(random.uniform(0.0, 100.0), 1)
+                axis_x = random.uniform(0.0, 1)
+                axis_y = random.uniform(0.0, 1)
+                axis_z = random.uniform(0.0, 1)
+                payload = json.dumps({"Temperatura":temperature,"Umidade":45,"Luminosidade":luminosity,"Eixo_X":axis_x,"Eixo_Y":axis_y,"Eixo_Z":axis_z})
                 client.publish(TOPIC, payload)
                 print(f"Publicado: {payload} no tópico {TOPIC}")
 

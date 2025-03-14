@@ -1,6 +1,6 @@
 # Deploy com FAAAST
 
-Este guia descreve as etapas para configurar e executar o FAAAST utilizando um arquivo `.AASX`.
+Este guia descreve as etapas básicas para configurar e executar o FAAAST utilizando um arquivo `.AASX`.
 
 ## Etapa 1: Criação de um `.AASX`
 
@@ -37,17 +37,38 @@ Esta etapa será descrita em outro documento.
      ```json
      "clientID": "FAAAST MQTT Client"
      ```
-## Etapa 3: Configurar a camada de integração
-Ajustar as variáveis de ambiente presentes no docker-compose.yml.
+     
+   No fim, teremos a configuração no formato:
+    ```
+        {
+            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
+            "subscriptionProviders":
+                    {
+                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Humidity":
+                            {
+                                "format": "JSON",
+                                "topic": "esp32/N/monitor/data",
+                                "query": "$.Umidade"
+                            }
+                    },
+            "serverUri": "tcp://131.255.82.115:1883",
+            "clientID": "FAAAST_N_Umidade"
+        }
+    ```
+    Nota: Para usar o modelo de exemplo, basta substituir o valor de N pelo número do seu DevKit
 
-```
-      MQTT_BROKER: 131.255.82.115
-      MQTT_PORT: 1883
-      MQTT_TOPIC: esp32/n/monitor/cmd
-      CLIENT_ID: esp32
-```
+3. **Configurar a camada de integração**
 
-## Etapa 4: Iniciar o serviço FAAAST
+    Ajustar as variáveis de ambiente presentes no docker-compose.yml.
+    
+    ```
+          MQTT_BROKER: 131.255.82.115
+          MQTT_PORT: 1883
+          MQTT_TOPIC: esp32/N/monitor/cmd
+          CLIENT_ID: esp32
+    ```
+
+## Etapa 3: Iniciar o serviço FAAAST
 
 ### Usando Docker
 Com Docker instalado, utilizamos o comando abaixo na pasta raiz:
@@ -71,6 +92,7 @@ Isso criará um broker MQTT local e executará um script que publicará atualiza
   ```json
   {"temperature": 34.4}
   ```
+- É necessário substituir as informações de broker e tópico nos arquivos.
 
 ---
 Este guia garante que todas as configurações essenciais estejam corretas antes de iniciar o FAAAST. Caso tenha dúvidas, consulte a documentação oficial do FAAAST para mais detalhes.

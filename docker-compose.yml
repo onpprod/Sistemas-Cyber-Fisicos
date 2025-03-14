@@ -17,7 +17,7 @@ services:
     environment:
       MQTT_BROKER: 131.255.82.115
       MQTT_PORT: 1883
-      MQTT_TOPIC: esp32/17/monitor/cmd
+      MQTT_TOPIC: esp32/N/monitor/cmd
       CLIENT_ID: esp32
     command: python integration.py
     restart: always
