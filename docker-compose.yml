@@ -17,8 +17,8 @@ services:
     environment:
       MQTT_BROKER: 131.255.82.115
       MQTT_PORT: 1883
-      MQTT_TOPIC: esp32/N/monitor/cmd
-      CLIENT_ID: esp32
-    command: python integration.py
+      MQTT_TOPIC_COMMAND: spacexlab/AAS/AAS_ID/command
+      CLIENT_ID: your_name
+    command: python -m src.robot
     restart: always
 

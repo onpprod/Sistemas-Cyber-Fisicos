@@ -14,85 +14,15 @@
             "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
             "subscriptionProviders":
                     {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Temperature":
+                        "(Submodel)https://example.com/ids/sm/2594_4052_3052_7147, (Property)Control":
                             {
                                 "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Temperatura"
+                                "topic": "spacexlab/AAS/AAS_ID/state",
+                                "query": "$.operational_state"
                             }
                     },
             "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Temperatura"
-        },
-        {
-            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
-            "subscriptionProviders":
-                    {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Humidity":
-                            {
-                                "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Umidade"
-                            }
-                    },
-            "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Umidade"
-        },
-        {
-            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
-            "subscriptionProviders":
-                    {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)Luminosity":
-                            {
-                                "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Luminosidade"
-                            }
-                    },
-            "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Luminosidade"
-        },
-        {
-            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
-            "subscriptionProviders":
-                    {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)XAxis":
-                            {
-                                "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Eixo_X"
-                            }
-                    },
-            "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Eixo_X"
-        },
-        {
-            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
-            "subscriptionProviders":
-                    {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)YAxis":
-                            {
-                                "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Eixo_Y"
-                            }
-                    },
-            "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Eixo_Y"
-        },
-        {
-            "@class": "de.fraunhofer.iosb.ilt.faaast.service.assetconnection.mqtt.MqttAssetConnection",
-            "subscriptionProviders":
-                    {
-                        "(Submodel)https://example.com/ids/sm/6380_8111_3052_5269, (Property)ZAxis":
-                            {
-                                "format": "JSON",
-                                "topic": "esp32/N/monitor/data",
-                                "query": "$.Eixo_Z"
-                            }
-                    },
-            "serverUri": "tcp://131.255.82.115:1883",
-            "clientID": "FAAAST_N_Eixo_Z"
+            "clientID": "FAAAST_N_operational_state"
         }
     ]
 }
